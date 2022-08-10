@@ -1,0 +1,4 @@
+#ignore artifacts:
+/views/_page_headers/admin_top.ejs
+/views/_page_headers/admin_bottom.ejs
+/views/starter/view.ejs

@@ -1,0 +1,158 @@
+<%- include('../_page_headers/admin_top.ejs') %>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="row fs-3">
+          <div class="col-lg-6">
+            <label class="text-gray-500"></label>
+            Full Name:
+            <span id="full_name" class="text-dark"> </span>
+          </label>
+          </div>
+          
+          <div class="col-lg-6">
+            <label class="text-gray-500"></label>
+            Account No:
+            <span id="account_no" class="text-dark"> </span>
+          </label>
+          </div>
+        
+          <div class="col-lg-4">
+            <label class="text-gray-500"></label>
+              Date:
+              <span id="date" class="text-dark"> </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+             
+                   <!--begin::Input group-->
+                   <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6"
+                      >Receiver's Full Name</label
+                    >
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                      <input
+                        id="fullname"
+                        type="text"
+                        name="fullname"
+                        class="form-control form-control-lg form-control-solid"
+                        placeholder="fullname "
+                        value="fullname"
+                        readonly
+                      />
+                      <div
+                        class="fv-plugins-message-container invalid-feedback"
+                      ></div>
+                    </div>
+                    <!--end::Col-->
+                  </div>
+                  <!--end::Input group-->
+                  <!--begin::Input group-->
+                  <div class="row mb-0">
+                    <!--begin::Label-->
+                
+                    <label class="col-lg-4 col-form-label fw-bold fs-6">Account No</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input
+                        id="account"
+                        type="text"
+                        name="account"
+                        class="form-control form-control-lg form-control-solid"
+                        readonly
+                        
+                      />
+                        <label class="form-check-label" for="allowmarketing"></label>
+                      </div>
+                    </div>
+                  <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-bold fs-6">
+                      <span class="required">Amount</span>
+                      <i
+                        class="fas fa-exclamation-circle ms-1 fs-7"
+                        data-bs-toggle="tooltip"
+                        title=""
+                        data-bs-original-title="Phone number must be active"
+                        aria-label="Phone number must be active"
+                      ></i>
+                    </label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                      <input
+                        id="amount"
+                        type="text"
+                        name="phone"
+                        class="form-control form-control-lg form-control-solid"
+                        placeholder="amount "
+                        value=""
+                      />
+                      <div
+                        class="fv-plugins-message-container invalid-feedback"
+                      ></div>
+                    </div>
+                    <!--end::Col-->
+                  </div>
+                  <!--end::Input group-->
+
+                <div class="card-footer d-flex justify-content-end py-6 px-9">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="kt_account_profile_details_submit"
+                  >
+                    Send
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  
+  const statement_det = { accountNo: 134567, fullname: "Tanaka Kawara" , date:"22-01-13"};
+  document.getElementById("account_no").innerHTML = statement_det.accountNo;
+  document.getElementById("full_name").innerHTML = statement_det.fullname;
+  document.getElementById("date").innerHTML = statement_det.date;
+ 
+ </script>
+
+<script>
+ const receiver_details = {
+          receiver_fullname: "Travour Motsi",
+          account: 567890,
+          amount:34,
+     
+        };
+      
+        document.getElementById("fullname").value = receiver_details.receiver_fullname;
+        document.getElementById("account").value =  receiver_details.account;
+        document.getElementById("amount").value = receiver_details.amount;
+     
+        
+       
+      </script>
+<%- include('../_page_headers/admin_bottom.ejs') %>
+<script>
+  $(document).ready(function () {
+    document.title = "Portal -  Paylink Clients";
+    document.getElementById("breadcrumb_title").innerHTML = "send-money";
+    document.getElementById("breadcrumb_thread").innerHTML = "Home - Clients";
+  });
+</script>

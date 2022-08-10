@@ -1,0 +1,66 @@
+<%- include('../_page_headers/admin_top.ejs') %>
+<div class="row mb-5">
+  <div class="card">
+    <div class="card-header">
+      <div class="row fs-4">
+        <div class="col-lg-6">
+          <label class="text-gray-500"></label>
+        Full Name:
+          <span id="full_name" class="text-dark"> </span>
+        </label>
+        </div>
+        
+        <div class="col-lg-6">
+          <label class="text-gray-500"></label>
+          Account No:
+          <span id="account_no" class="text-dark"> </span>
+        </label>
+        </div>
+      <br>
+        <div class="col-lg-4">
+          <label class="text-gray-500"></label>
+            Date:
+            <span id="date" class="text-dark"> </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-body">
+      <div class="row fs-3">
+        <div class="col-sm-4">
+          <label class="text-gray-600"
+            >Currency Code :<span id="currency" class="text-dark"></span
+          ></label>
+        </div>
+        <div class="col-sm-4">
+          <label class="text-gray-500">
+            Amount:
+            <span id="amount" class="text-dark"> </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../_page_headers/admin_bottom.ejs') %>
+<script>
+  
+  const balance_det = { accountNo: 134567, fullname: "Tanaka Kawara" , date:"22-01-13"};
+  document.getElementById("account_no").innerHTML = balance_det.accountNo;
+  document.getElementById("full_name").innerHTML = balance_det.fullname;
+  document.getElementById("date").innerHTML = balance_det.date;
+ </script>
+ <script>
+  const balance={currency:"usd",amount:12};
+  document.getElementById("currency").innerHTML = balance.currency;
+  document.getElementById("amount").innerHTML = balance.amount;
+
+ </script>
+<script>
+  $(document).ready(function () {
+    document.title = "Portal -  Paylink Clients";
+    document.getElementById("breadcrumb_title").innerHTML = "balance";
+    document.getElementById("breadcrumb_thread").innerHTML = "Home - Clients";
+  });
+</script>

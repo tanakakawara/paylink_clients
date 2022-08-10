@@ -1,0 +1,42 @@
+<%- include('../_page_headers/admin_top.ejs') %>
+<div class="row mb-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="row fs-3">
+        <div class="col-sm-4">
+          <label class="text-gray-600"
+            >ID :<span id="member_id" class="text-dark"></span
+          ></label>
+        </div>
+        <div class="col-sm-4">
+          <label class="text-gray-500"
+            >Full Name:
+            <span id="member_full_name" class="text-dark"> </span>
+          </label>
+        </div>
+        <div class="col-sm-4">
+          <div class="card-toolbar">
+            <a id="make_payment_btn" href="" class="btn btn-primary btn-sm"
+              ><li class="fa fa-delete"></li>
+              &nbsp; Confirm Delete</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../_page_headers/admin_bottom.ejs') %>
+<script>
+  const clients = { id: 1, fullname: "test" };
+  document.getElementById("member_id").innerHTML = clients.id;
+  document.getElementById("member_full_name").innerHTML = clients.fullname;
+</script>
+<script>
+  $(document).ready(function () {
+    document.title = "Portal -  Paylink Clients";
+    document.getElementById("breadcrumb_title").innerHTML = "Clients";
+    document.getElementById("breadcrumb_thread").innerHTML = "Home - Delete";
+  });
+</script>

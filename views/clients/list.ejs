@@ -1,0 +1,195 @@
+<%- include('../_page_headers/admin_top.ejs') %>
+
+<div class="row">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="card-title">All Clients</h1>
+      <div class="card-toolbar">
+        <a href="/account/clients/add" class="btn btn-primary btn-sm"
+          ><li class="fa fa-plus"></li>
+          &nbsp; Add New Client</a
+        >
+      </div>
+    </div>
+    <div class="card-body table-responsive">
+      <table
+        id="tblmembers"
+        class="table table-striped table-row-bordered gy-5 gs-7 border rounded"
+      >
+        <thead>
+          <tr class="fw-bolder fs-12 text-gray-800 px-7">
+            <th>id</th>
+            <th>National ID</th>
+            <th>Drivers License No</th>
+
+            <th>Passport Number</th>
+            <th>Nationality</th>
+            <th>Full name</th>
+
+            <th width="50%">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            const clients = [
+              {
+                id: 1,
+                national_id: "rufaro",
+                driverslicense: "rufa",
+                passportnumber: 98,
+                nationality: "zim",
+                full_name: "tanaka",
+              },
+            ];
+            clients.forEach((element) => {
+              document.write(`
+            <tr>
+              <td>${element.id}</td>
+              <td>${element.national_id}</td>
+             
+              <td>${element.driverslicense}</td>
+              <td>${element.passportnumber}</td>
+              <td>${element.nationality}</td>
+              <td>${element.full_name}</td>
+             
+              
+              <td  width="50%">
+                <a href="account/clients/view/${element.id}" class="btn-sm"
+                                ><li class="fa fa-eye"></li>
+                                View</a
+                              >
+
+                              
+                              <a href =
+                "/account/send_money/${element.id}" class="btn-sm"
+                                ><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                Send-Money</a
+                              >
+                    
+                              
+                              <a href="/account/statement/${element.id}" class="btn-sm"
+                                ><i class="fa fa-tasks" aria-hidden="true"></i>
+                                Statement </a
+                              >
+                              <a href="/account/balance/${element.id}" class="btn-sm"
+                                ><i class="fas fa-money-check"></i>
+                                Balance</a
+                              >
+                              </br>
+                              <a href="/account/reset_pin/${element.id}" class="btn-sm"
+                                ><i class="fa fa-key" aria-hidden="true"></i>
+                                Reset-Pin</a
+                              >
+
+                </td>
+
+  
+            </tr>
+            `);
+            });
+          </script>
+        </tbody>
+      </table>
+      <br />
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary" onclick="exportData()">
+        <i class="fa fa-download" aria-hidden="true"></i>CSV
+      </button>
+
+      <button class="btn btn-primary" onclick="Export()">
+        <i class="fa fa-download" aria-hidden="true"></i>PDF
+      </button>
+    </div>
+  </div>
+</div>
+
+<%- include('../_page_headers/admin_bottom.ejs') %>
+<script>
+  /* exporting to excel */
+  function exportData() {
+    var table = document.getElementById("tblmembers");
+
+    /* Declaring array */
+    var rows = [];
+
+    //iterate through rows of table
+    for (var i = 0, row; (row = table.rows[i]); i++) {
+      //rows would be accessed using the "row" variable assigned in the for loop
+      //Get each cell value/column from the row
+      full_name = row.cells[0].innerText;
+      username = row.cells[1].innerText;
+      reg_date = row.cells[2].innerText;
+      national_id = row.cells[3].innerText;
+      contact_phone = row.cells[4].innerText;
+      balance = row.cells[5].innerText;
+      datejoined = row.cells[6].innerText;
+      country = row.cells[7].innerText;
+      branch_name = row.cells[8].innerText;
+      status = row.cells[9].innerText;
+
+      /* add a new records in the array */
+      rows.push([
+        full_name,
+        username,
+        reg_date,
+        national_id,
+        contact_phone,
+        balance,
+        datejoined,
+        country,
+        branch_name,
+        status,
+      ]);
+    }
+    csvContent = "data:text/csv;charset=utf-8,";
+    /* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
+    rows.forEach(function (rowArray) {
+      row = rowArray.join(",");
+      csvContent += row + "\r\n";
+    });
+
+    /* create a hidden <a> DOM node and set its download attribute */
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "clients.csv");
+    document.body.appendChild(link);
+    /* download the data file named "members.csv" */
+    link.click();
+  }
+</script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"
+></script>
+<script type="text/javascript">
+  function Export() {
+    html2canvas(document.getElementById("tblmembers"), {
+      onrendered: function (canvas) {
+        var data = canvas.toDataURL();
+        var docDefinition = {
+          content: [
+            {
+              image: data,
+              width: 500,
+            },
+          ],
+        };
+        pdfMake.createPdf(docDefinition).download("clients.pdf");
+      },
+    });
+  }
+</script>
+
+<script>
+  $(document).ready(function () {
+    document.title = "Portal -  Paylink Clients";
+    document.getElementById("breadcrumb_title").innerHTML = "Clients";
+    document.getElementById("breadcrumb_thread").innerHTML = "Home - Clients";
+  });
+</script>

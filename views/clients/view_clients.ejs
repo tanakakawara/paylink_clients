@@ -1,0 +1,398 @@
+<%- include('../_page_headers/admin_top.ejs') %>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card mb-5 mb-xl-10">
+      <!--begin::Card header-->
+      <div
+        class="card-header border-0 cursor-pointer"
+        role="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#kt_account_profile_details"
+        aria-expanded="true"
+        aria-controls="kt_account_profile_details"
+      >
+        <!--begin::Card title-->
+        <div class="card-title m-0">
+          
+        </div>
+        <!--end::Card title-->
+      </div>
+      <!--begin::Card header-->
+      <!--begin::Content-->
+      <div id="kt_account_settings_profile_details" class="collapse show">
+        <!--begin::Form-->
+        <form
+          id="kt_account_profile_details_form"
+          class="form fv-plugins-bootstrap5 fv-plugins-framework"
+          novalidate="novalidate"
+        >
+          <!--begin::Card body-->
+          <div class="card-body border-top p-9">
+           
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label required fw-bold fs-6"
+                >National ID</label
+              >
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                <input
+                  id="nat_id"
+                  type="text"
+                  name="nat_id"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="nat_id "
+                  value="nat_id"
+                />
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-0">
+              <!--begin::Label-->
+          
+              <label class="col-lg-4 col-form-label fw-bold fs-6">Driver's Licence</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                  <input
+                  id="drivers_license"
+                  type="text"
+                  name="drivers_license"
+                  class="form-control form-control-lg form-control-solid"
+                  
+                />
+                  <label class="form-check-label" for="allowmarketing"></label>
+                </div>
+              </div>
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label fw-bold fs-6">
+                <span class="required">Passport No.</span>
+                <i
+                  class="fas fa-exclamation-circle ms-1 fs-7"
+                  data-bs-toggle="tooltip"
+                  title=""
+                  data-bs-original-title="Phone number must be active"
+                  aria-label="Phone number must be active"
+                ></i>
+              </label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                <input
+                  id="passport_number"
+                  type="text"
+                  name="phone"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="passport_number "
+                  value="passport_number"
+                />
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label fw-bold fs-6">
+                <span class="required">Nationality</span>
+                <i
+                  class="fas fa-exclamation-circle ms-1 fs-7"
+                  data-bs-toggle="tooltip"
+                  title=""
+                  data-bs-original-title="Phone number must be active"
+                  aria-label="Phone number must be active"
+                ></i>
+              </label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                <input
+                  id="nationality"
+                  type="tel"
+                  name="nationality"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="nationality "
+                  value=""
+                />
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+            <!--begin::Input group-->
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-4 col-form-label fw-bold fs-6">First Name</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                <input
+                  id="first_name"
+                  type="text"
+                  name="website"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="first_name"
+                  value="first_name"
+                />
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Input group-->
+
+            
+            <!--begin::Input group-->
+            <div class="row mb-0">
+              <!--begin::Label-->
+          
+              <label class="col-lg-4 col-form-label fw-bold fs-6">Middle Name</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                  <input
+                  id="middle_name"
+                  type="address"
+                  name="middle_name"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder=" middle_name"
+                
+                />
+                  <label class="form-check-label" for="middle_name"></label>
+                </div>
+              </div>
+              <div class="row mb-0">
+                <!--begin::Label-->
+            
+                <label class="col-lg-4 col-form-label fw-bold fs-6"> Last Name</label>
+                <!--end::Label-->
+                <!--begin::Col-->
+                <div class="col-lg-8 fv-row">
+                    <input
+                    id="last_name"
+                    type="text"
+                    name="address"
+                    class="form-control form-control-lg form-control-solid"
+                
+                  />
+                    <label class="form-check-label" for="middle_name"></label>
+                  </div>
+                </div>
+            <div class="row mb-0">
+              <!--begin::Label-->
+          
+              <label class="col-lg-4 col-form-label fw-bold fs-6">Phone Number</label>
+              <!--end::Label-->
+              <!--begin::Col-->
+              <div class="col-lg-8 fv-row">
+                  <input
+                  id="phone_number"
+                  type="text"
+                  name="address"
+                  class="form-control form-control-lg form-control-solid"
+                  placeholder="phone_number "
+                  value="phone_number"
+                />
+                  <label class="form-check-label" for="phone_number"></label>
+                </div>
+              </div>
+              <!--begin::Label-->
+              <div class="row mb-0">
+                <!--begin::Label-->
+            
+                <label class="col-lg-4 col-form-label fw-bold fs-6"> Email Address</label>
+                <!--end::Label-->
+                <!--begin::Col-->
+                <div class="col-lg-8 fv-row">
+                    <input
+                    id="email_address"
+                    type="text"
+                    name="email_address"
+                    class="form-control form-control-lg form-control-solid"
+                
+                  />
+                    <label class="form-check-label" for="email_address"></label>
+                  </div>
+                </div>
+               
+                  <div class="row mb-0">
+                    <!--begin::Label-->
+                
+                    <label class="col-lg-4 col-form-label fw-bold fs-6"> Gender</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input
+                        id="gender"
+                        type="text"
+                        name="gender"
+                        class="form-control form-control-lg form-control-solid"
+                    
+                      />
+                        <label class="form-check-label" for="gender"></label>
+                      </div>
+                    </div>
+                    <div class="row mb-0">
+                      <!--begin::Label-->
+                  
+                      <label class="col-lg-4 col-form-label fw-bold fs-6"> Marital Status</label>
+                      <!--end::Label-->
+                      <!--begin::Col-->
+                      <div class="col-lg-8 fv-row">
+                          <input
+                          id="marital_status"
+                          type="text"
+                          name="marital_status"
+                          class="form-control form-control-lg form-control-solid"
+                      
+                        />
+                          <label class="form-check-label" for="marital_status"></label>
+                        </div>
+                      </div>
+                      <div class="row mb-0">
+                        <!--begin::Label-->
+                    
+                        <label class="col-lg-4 col-form-label fw-bold fs-6"> Address Line 1</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8 fv-row">
+                            <input
+                            id="address_line_1"
+                            type="text"
+                            name="address_line_1"
+                            class="form-control form-control-lg form-control-solid"
+                        
+                          />
+                            <label class="form-check-label" for="address_line_1"></label>
+                          </div>
+                        </div>
+                  <div class="row mb-0">
+                    <!--begin::Label-->
+                
+                    <label class="col-lg-4 col-form-label fw-bold fs-6"> Address Line 2</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input
+                        id="address_line_2"
+                        type="text"
+                        name="address_line_2"
+                        class="form-control form-control-lg form-control-solid"
+                    
+                      />
+                        <label class="form-check-label" for="address_line_2"></label>
+                      </div>
+                    </div>
+                    <div class="row mb-0">
+                      <!--begin::Label-->
+                  
+                      <label class="col-lg-4 col-form-label fw-bold fs-6"> Address City</label>
+                      <!--end::Label-->
+                      <!--begin::Col-->
+                      <div class="col-lg-8 fv-row">
+                          <input
+                          id="address_city"
+                          type="text"
+                          name="address_country"
+                          class="form-control form-control-lg form-control-solid"
+                      
+                        />
+                          <label class="form-check-label" for="address_country"></label>
+                        </div>
+                      </div>
+                      <div class="row mb-0">
+                        <!--begin::Label-->
+                    
+                        <label class="col-lg-4 col-form-label fw-bold fs-6"> Address Country </label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8 fv-row">
+                            <input
+                            id="address_country"
+                            type="text"
+                            name="address_country"
+                            class="form-control form-control-lg form-control-solid"
+                        
+                          />
+                            <label class="form-check-label" for="country"></label>
+                          </div>
+                        </div>
+            </div>
+            <!--end::Input group-->
+          </div>
+          <!--end::Card body-->
+          <!--begin::Actions-->
+          <div class="card-footer d-flex justify-content-end py-6 px-9">
+            
+            <button
+              type="submit"
+              class="btn btn-primary"
+              id="kt_account_profile_details_submit"
+            >
+              Update Clients
+            </button>
+          </div>
+          <!--end::Actions-->
+          <input type="hidden" />
+          <div></div>
+        </form>
+        <!--end::Form-->
+      </div>
+      <!--end::Content-->
+    </div>
+    <script>
+   
+   const client_details = {
+          nat_id: "23-4378348T84",
+          driverslicence: "3678909",
+          passportnumber:"222",
+          nationality: "zimbabwean",
+          first_name: "travour",
+          midddlename: "vongai",
+          last_name: "nomail@motsi",
+          phone:773849302,
+          email:"travour@aplimac.co.zw",
+         
+          gender: "male",
+          marital_status:"single",
+          address1: "high",
+          address2: "low",
+          address_city:"trinity",
+          address_country:"zimbabwe"
+        };
+    
+      document.getElementById("nat_id").value = client_details.nat_id;
+      document.getElementById("drivers_license").value = client_details.driverslicence;
+      document.getElementById("passport_number").value = client_details.passportnumber;
+      document.getElementById("nationality").value = client_details.nationality;
+      document.getElementById("first_name").value = client_details.first_name;
+      document.getElementById("middle_name").value = client_details.midddlename;
+      document.getElementById("last_name").value = client_details.last_name;
+      document.getElementById("phone_number").value = client_details.phone;
+      document.getElementById("email_address").value=client_details.email;
+      document.getElementById("gender").value=client_details.gender;
+      document.getElementById("marital_status").value=client_details.marital_status;
+      document.getElementById("address_line_1").value=client_details.address1;
+      document.getElementById("address_line_2").value=client_details.address2;
+      document.getElementById("address_city").value=client_details.address_city;
+      document.getElementById("address_country").value=client_details.address_country;
+    </script>
+<%- include('../_page_headers/admin_bottom.ejs') %>
+<script>
+  $(document).ready(function () {
+    document.title = "Portal - Paylink Clients";
+    document.getElementById("breadcrumb_title").innerHTML = "View Clients";
+    document.getElementById("breadcrumb_thread").innerHTML = "Home - Clients";
+  });
+</script>

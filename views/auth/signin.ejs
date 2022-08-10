@@ -1,0 +1,171 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+    <title>Login - Paylink Clients</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/portal/media/logos/favicon.png"
+    />
+    <!--begin::Fonts-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
+    />
+    <!--end::Fonts-->
+
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link
+      href="/portal/plugins/global/plugins.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/portal/css/style.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--end::Global Stylesheets Bundle-->
+  </head>
+  <!--end::Head-->
+  <!--begin::Body-->
+  <body
+    id="kt_body"
+    class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled auth-bg"
+  >
+    <div class="d-flex flex-column flex-root">
+      <!--begin::Authentication - Sign-in -->
+      <div
+        class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed"
+        style="
+          background-image: url(/portal/media/illustrations/sigma-1/14.png);
+        "
+      >
+        <!--begin::Content-->
+        <div
+          class="d-flex flex-center flex-column flex-column-fluid p-5 pb-lg-5"
+        >
+          <!--begin::Wrapper-->
+
+          <div
+            class="w-lg-400px w-sm-100 bg-body rounded shadow-sm p-10 mx-auto"
+          >
+            <!--begin::Form-->
+            <form
+              class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework"
+              method="post"
+            >
+              <!--begin::Heading-->
+              <div class="col-sm-12">
+                <div class="text-center mb-0">
+                  <!--begin::Title-->
+                  <a href="/signin" class="mb-0">
+                    <img
+                      alt="Logo"
+                      src="/portal/media/logos/logo-alt.png"
+                      class="h-100px"
+                    />
+                  </a>
+                  <!--end::Title-->
+                  <hr />
+                  <!--end::Link-->
+                  <!--begin::Link-->
+                  <div class="text-gray-800 fw-boldest text-primary mb-2 fs-3">
+                    Login
+                  </div>
+                </div>
+              </div>
+              <!--begin::Heading-->
+              <!--begin::Input group-->
+              <div class="col-sm-12">
+                <div class="row mb-0">
+                  <!--begin::Label-->
+                  <label class="form-label fs-6 fw-bolder text-dark"
+                    >Username</label
+                  >
+                  <!--end::Label-->
+                  <!--begin::Input-->
+                  <input
+                    class="form-control form-control-lg form-control-solid form-control-sm"
+                    type="text"
+                    name="username"
+                    autocomplete="off"
+                  />
+                  <!--end::Input-->
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="row mb-10">
+                  <!--begin::Wrapper-->
+                  <div class="d-flex flex-stack mb-2">
+                    <!--begin::Label-->
+                    <label class="form-label fw-bolder text-dark fs-6 mb-0"
+                      >Password</label
+                    >
+                    <!--end::Label-->
+                  </div>
+                  <!--end::Wrapper-->
+                  <!--begin::Input-->
+                  <input
+                    class="form-control form-control-lg form-control-solid form-control-sm"
+                    type="password"
+                    name="password"
+                    autocomplete="off"
+                  />
+                  <!--end::Input-->
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <!--begin::Link-->
+                    <a
+                      href="auth.php?action=forgot_password"
+                      class="link-primary fs-6 fw-bolder"
+                      >Forgot Password?
+                    </a>
+
+                    <a href="two_factor" class="link-primary fs-6 fw-bolder">
+                      Two Factor Auth
+                    </a>
+                    <!--end::Link-->
+                  </div>
+                </div>
+                <br />
+                <!--end::Input group-->
+                <!--begin::Actions-->
+                <div class="text-center">
+                  <!--begin::Submit button-->
+                  <!--id="kt_sign_in_submit"-->
+                  <a
+                    href="/account"
+                    name="submit"
+                    type="submit"
+                    class="btn btn-lg btn-primary w-100 mb-5"
+                  >
+                    <span class="indicator-label text-bolder">Sign in</span>
+                  </a>
+                  <!--end::Submit button-->
+                  <!--end::Google link-->
+                </div>
+              </div>
+              <!--end::Actions-->
+            </form>
+            <!--end::Form-->
+          </div>
+          <!--end::Wrapper-->
+        </div>
+        <!--end::Content-->
+        <!--begin::Footer-->
+        <!--end::Footer-->
+      </div>
+      <!--end::Authentication - Sign-in-->
+    </div>
+
+    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <script src="/portal/plugins/global/plugins.bundle.js"></script>
+    <script src="/portal/js/scripts.bundle.js"></script>
+    <!--end::Global Javascript Bundle-->
+  </body>
+</html>
