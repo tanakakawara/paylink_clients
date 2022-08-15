@@ -210,7 +210,9 @@
   document.getElementById("header_username").innerHTML = header_names.username;
 </script>
 <script>
-  const notifications_bar = [{ message: "word", title: "notifications" }];
+  const notifications_bar = [
+    { id: 1, message: "word", title: "notifications" },
+  ];
   notifications_bar.forEach((element) => {
     document.getElementById(
       "notifications"
