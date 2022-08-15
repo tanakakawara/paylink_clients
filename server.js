@@ -65,8 +65,20 @@ app.get("/account/balance/:id", (req, res) => {
 });
 
 /* user-management */
-app.get("/user-management", (req, res) => {
+app.get("/users", (req, res) => {
   res.render("user-management/list");
+});
+app.get("/users/new", (req, res) => {
+  res.render("user-management/new_accounts");
+});
+app.get("/users/active", (req, res) => {
+  res.render("user-management/active_accounts");
+});
+app.get("/users/suspended", (req, res) => {
+  res.render("user-management/suspended_accounts");
+});
+app.get("/user-management/profile/:id", (req, res) => {
+  res.render("user-management/user_profile");
 });
 
 /* global-config */

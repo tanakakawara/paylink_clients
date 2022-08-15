@@ -1,0 +1,66 @@
+<%- include('../_page_headers/admin_top.ejs') %>
+<div class="row">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="card-title">All Clients</h1>
+      <div class="card-toolbar"></div>
+    </div>
+    <div class="card-body">
+      <table
+        id="tblmembers"
+        class="table table-striped table-row-bordered gy-5 gs-7 border rounded"
+      >
+        <thead>
+          <tr class="fw-bolder fs-6 text-gray-800 px-7">
+            <th>Employer ID</th>
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Access Level</th>
+
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            const active = [
+              {
+                id: 1,
+                username: "rufaro",
+                full_name: "rufa",
+                access_level: 2,
+              },
+            ];
+
+            active.forEach((element) => {
+              document.write(`
+                <tr>
+                  <td>${element.id}</td>
+                  <td>${element.username}</td>
+                  <td>${element.full_name}</td>
+                  <td>${element.access_level}</td>
+                 
+                  <td>
+                    <a href="/user-management/profile/${element.id}" class="btn-sm"
+                      ><li class="fa fa-eye"></li>
+                      View</a
+                    >
+                
+                  </td>
+                </tr>
+                `);
+            });
+          </script>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%- include('../_page_headers/admin_bottom.ejs') %>
+<script>
+  $(document).ready(function () {
+    document.title = "Portal -  Paylink Clients";
+    document.getElementById("breadcrumb_title").innerHTML = "User Management";
+    document.getElementById("breadcrumb_thread").innerHTML =
+      "Home - Active Accounts";
+  });
+</script>
