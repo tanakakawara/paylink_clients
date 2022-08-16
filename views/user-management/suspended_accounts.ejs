@@ -36,7 +36,7 @@
                   <tr>
                     <td>${element.id}</td>
                     <td>${element.username}</td>
-                    <td>$${element.full_name}</td>
+                    <td>${element.full_name}</td>
                     <td>${element.access_level}</td>
                    
                     <td>
@@ -59,8 +59,9 @@
 <script>
   $(document).ready(function () {
     document.title = "Portal -  Paylink Clients";
-    document.getElementById("breadcrumb_title").innerHTML = "User Management";
+    document.getElementById("breadcrumb_title").innerHTML =
+      "Suspended Accounts";
     document.getElementById("breadcrumb_thread").innerHTML =
-      "Home - Suspended Accounts";
+      "Home -User Management ";
   });
 </script>

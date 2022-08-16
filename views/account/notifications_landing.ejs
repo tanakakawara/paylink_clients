@@ -1,0 +1,82 @@
+<%- include('../_page_headers/admin_top.ejs') %>
+<div class="row">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="card-title">Notifications</h1>
+      <div class="card-toolbar"></div>
+    </div>
+    <div class="card-body">
+      <table
+        id="tblmembers"
+        class="table table-striped table-row-bordered gy-5 gs-7 border rounded"
+      >
+        <thead>
+          <tr class="fw-bolder fs-6 text-gray-800 px-7">
+            <th></th>
+            <th>Title</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            const notifications = [
+              {
+                id: 1,
+                title: "rufaro",
+                message: "rufa",
+                date: 2,
+                status: 0,
+              },
+              {
+                id: 2,
+                title: "tanaka",
+                message: "code",
+                date: 2,
+                status: 1,
+              },
+            ];
+
+            notifications.forEach((element) => {
+              if (element.status == 0) {
+                not_stats = '<i class="fa fa-circle text-warning" >';
+              } else {
+                not_stats = '<i class="fa fa-circle text-grey-600"> ';
+              }
+
+              document.write(`
+             
+                  <tr>
+                    <td>${not_stats}</i></td>
+                    <td>${element.title}</td>
+                    <td>${element.message}</td>
+                    <td>${element.date}</td>
+                    <td>
+                      <a  href="/account/notifications_page/${element.id}" class="btn-sm"
+                        ><li class="fa fa-eye"></li>
+                        View</a
+                      >
+                  
+                  
+                    </td>
+                  </tr>
+                  </a>
+                  `);
+            });
+          </script>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%- include('../_page_headers/admin_bottom.ejs') %>
+<script></script>
+<script>
+  $(document).ready(function () {
+    document.title = "Portal -  Paylink Clients";
+    document.getElementById("breadcrumb_title").innerHTML = "Notifications";
+    document.getElementById("breadcrumb_thread").innerHTML =
+      "Home - Notifications";
+  });
+</script>

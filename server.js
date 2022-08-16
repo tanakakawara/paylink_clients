@@ -42,6 +42,13 @@ app.get("/account/clients/view/:id", (req, res) => {
 });
 
 /* account */
+
+app.get("/account/notifications_page/:id", (req, res) => {
+  res.render("account/notifications_page");
+});
+app.get("/account/notifications", (req, res) => {
+  res.render("account/notifications_landing");
+});
 app.get("/account/profile", (req, res) => {
   res.render("account/view_profile");
 });
