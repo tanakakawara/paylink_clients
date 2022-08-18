@@ -31,63 +31,56 @@
         </thead>
         <tbody>
           <script>
-            const clients = [
-              {
-                id: 1,
-                national_id: "rufaro",
-                driverslicense: "rufa",
-                passportnumber: 98,
-                nationality: "zim",
-                full_name: "tanaka",
-              },
-            ];
-            clients.forEach((element) => {
-              document.write(`
-            <tr>
-              <td>${element.id}</td>
-              <td>${element.full_name}</td>
-              <td>${element.national_id}</td>
-             
-              <td>${element.driverslicense}</td>
-              <td>${element.passportnumber}</td>
-              <td>${element.nationality}</td>
-      
-             
-              
-              <td  width="50%">
-                <a href="account/clients/view/${element.id}" class="btn-sm"
-                                ><li class="fa fa-eye"></li>
-                                View</a
-                              >
 
-                              
-                              <a href =
-                "/account/send_money/${element.id}" class="btn-sm"
-                                ><i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                Send-Money</a
-                              >
-                    
-                              
-                              <a href="/account/statement/${element.id}" class="btn-sm"
-                                ><i class="fa fa-tasks" aria-hidden="true"></i>
-                                Statement </a
-                              >
-                              <a href="/account/balance/${element.id}" class="btn-sm"
-                                ><i class="fas fa-money-check"></i>
-                                Balance</a
-                              >
-                              </br>
-                              <a href="/account/reset_pin/${element.id}" class="btn-sm"
-                                ><i class="fa fa-key" aria-hidden="true"></i>
-                                Reset-Pin</a
-                              >
+            const clients = <%- locals.clients  %>
 
-                </td>
+                clients.forEach((element) => {
+                  document.write(`
+                <tr>
+                  <td>${element.id}</td>
+                  <td>${element.full_name}</td>
+                  <td>${element.national_id}</td>
 
-  
-            </tr>
-            `);
-            });
+                  <td>${element.driverslicense}</td>
+                  <td>${element.passportnumber}</td>
+                  <td>${element.nationality}</td>
+
+
+
+                  <td  width="50%">
+                    <a href="account/clients/view/${element.id}" class="btn-sm"
+                                    ><li class="fa fa-eye"></li>
+                                    View</a
+                                  >
+
+
+                                  <a href =
+                    "/account/send_money/${element.id}" class="btn-sm"
+                                    ><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                    Send-Money</a
+                                  >
+
+
+                                  <a href="/account/statement/${element.id}" class="btn-sm"
+                                    ><i class="fa fa-tasks" aria-hidden="true"></i>
+                                    Statement </a
+                                  >
+                                  <a href="/account/balance/${element.id}" class="btn-sm"
+                                    ><i class="fas fa-money-check"></i>
+                                    Balance</a
+                                  >
+                                  </br>
+                                  <a href="/account/reset_pin/${element.id}" class="btn-sm"
+                                    ><i class="fa fa-key" aria-hidden="true"></i>
+                                    Reset-Pin</a
+                                  >
+
+                    </td>
+
+
+                </tr>
+                `);
+                });
           </script>
         </tbody>
       </table>

@@ -69,11 +69,7 @@
                 style="font-size: 20px"
                 class="text-dark fa fa-bell position-relative"
               >
-                <span
-                  id="not_count"
-                  class="position-absolute top-0 start-100 translate-middle badge badge-circle badge-warning"
-                  >5</span
-                >
+                <span id="not_count"></span>
               </li>
             </span>
           </a>
@@ -189,15 +185,21 @@
   <!--end::Container-->
 </div>
 <!--header-->
+
 <script>
   const header_names = {
     fullname: "tanaka kawara",
     username: "tanakaa",
-    new_not_count: 2,
+    new_not_count: 1,
   };
   document.getElementById("header_fullname").innerHTML = header_names.fullname;
   document.getElementById("header_username").innerHTML = header_names.username;
-  document.getElementById("not_count").innerHTML = header_names.new_not_count;
+
+  if (header_names.new_not_count) {
+    document.getElementById(
+      "not_count"
+    ).innerHTML = `<span   class="position-absolute top-0 start-100 translate-middle badge badge-circle badge-warning" >${header_names.new_not_count}</span>`;
+  }
 </script>
 <script>
   const notifications_bar = [
