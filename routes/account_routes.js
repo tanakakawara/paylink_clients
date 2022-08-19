@@ -11,16 +11,7 @@ router.get("/auth/signin", (req, res) => {
 
 /*clients*/
 router.get("/clients", (req, res) => {
-  const clients = [
-    {
-      id: 1,
-      national_id: "rufaro",
-      driverslicense: "rufa",
-      passportnumber: 98,
-      nationality: "zim",
-      full_name: "tanaka",
-    },
-  ];
+ 
 
   res.render("clients/view_clients", {
     client_details: JSON.stringify(clients),
@@ -33,28 +24,7 @@ router.get("/account/clients/delete/:clients_id", (req, res) => {
 });
 
 router.get("/account/clients/view/:id", (req, res) => {
-  const client_details = {
-    nat_id: "23-4378348T84",
-    driverslicence: "3678909",
-    passportnumber: "222",
-    nationality: "zimbabwean",
-    first_name: "travour",
-    midddlename: "vongai",
-    last_name: "nomail@motsi",
-    phone: 773849302,
-    email: "travour@aplimac.co.zw",
-
-    gender: "male",
-    marital_status: "single",
-    address1: "high",
-    address2: "low",
-    address_city: "trinity",
-    address_country: "zimbabwe",
-  };
-
-  res.render("clients/view_clients", {
-    client_details: JSON.stringify(client_details),
-  });
+  res.render("clients/view_clients");
 });
 
 /* account */
@@ -126,15 +96,16 @@ router.get("/account/balance/:id", (req, res) => {
 router.get("/users", (req, res) => {
   res.render("user-management/list");
 });
+router.get("/users/suspended", (req, res) => {
+  res.render("user-management/suspended_accounts");
+});
 router.get("/users/new", (req, res) => {
   res.render("user-management/new_accounts");
 });
 router.get("/users/active", (req, res) => {
   res.render("user-management/active_accounts");
 });
-router.get("/users/suspended", (req, res) => {
-  res.render("user-management/suspended_accounts");
-});
+
 router.get("/user-management/profile/:id", (req, res) => {
   res.render("user-management/user_profile");
 });
