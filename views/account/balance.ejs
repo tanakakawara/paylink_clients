@@ -2,7 +2,7 @@
 <div class="row mb-5">
   <div class="card">
     <div class="card-header">
-      <div class="row fs-4">
+      <div class="row fs-3 mt-5 mb-5">
         <div class="col-lg-6">
           <label class="text-gray-500"></label>
         Full Name:
@@ -45,14 +45,15 @@
 </div>
 <%- include('../_page_headers/admin_bottom.ejs') %>
 <script>
-  
-  const balance_det = { accountNo: 134567, fullname: "Tanaka Kawara" , date:"22-01-13"};
-  document.getElementById("account_no").innerHTML = balance_det.accountNo;
-  document.getElementById("full_name").innerHTML = balance_det.fullname;
-  document.getElementById("date").innerHTML = balance_det.date;
+   const header_det = <%- locals.header_det  %>
+
+  document.getElementById("account_no").innerHTML = header_det.accountNo;
+  document.getElementById("full_name").innerHTML = header_det.fullname;
+  document.getElementById("date").innerHTML = header_det.date;
  </script>
  <script>
-  const balance={currency:"usd",amount:12};
+  const balance = <%- locals.balance  %>
+
   document.getElementById("currency").innerHTML = balance.currency;
   document.getElementById("amount").innerHTML = balance.amount;
 

@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
       <table
-        id="tblmembers"
+        id="tbl_suspended"
         class="table table-striped table-row-bordered gy-5 gs-7 border rounded"
       >
         <thead>
@@ -22,14 +22,8 @@
         </thead>
         <tbody>
           <script>
-            const suspended = [
-              {
-                id: 1,
-                username: "rufaro",
-                full_name: "rufa",
-                access_level: 2,
-              },
-            ];
+                  const suspended = <%- locals.suspended  %>
+
 
             suspended.forEach((element) => {
               document.write(`
@@ -38,13 +32,13 @@
                     <td>${element.username}</td>
                     <td>${element.full_name}</td>
                     <td>${element.access_level}</td>
-                   
+
                     <td>
                       <a href="/user-management/profile/${element.id}" class="btn-sm"
                         ><li class="fa fa-eye"></li>
                         View</a
                       >
-                  
+
                     </td>
                   </tr>
                   `);
@@ -53,9 +47,81 @@
         </tbody>
       </table>
     </div>
+    <div class="card-footer">
+      <button class="btn btn-primary" onclick="exportData()">
+        <i class="fa fa-download" aria-hidden="true"></i>CSV
+      </button>
+      <button class="btn btn-primary" onclick="Export()">
+        <i class="fa fa-download" aria-hidden="true"></i>PDF
+      </button>
+    </div>
   </div>
 </div>
 <%- include('../_page_headers/admin_bottom.ejs') %>
+<script>
+  /* exporting to excel */
+  function exportData() {
+    var table = document.getElementById("tbl_suspended");
+
+    /* Declaring array */
+    var rows = [];
+
+    //iterate through rows of table
+    for (var i = 0, row; (row = table.rows[i]); i++) {
+      //rows would be accessed using the "row" variable assigned in the for loop
+      //Get each cell value/column from the row
+      id = row.cells[0].innerText;
+      username = row.cells[1].innerText;
+      fullname = row.cells[2].innerText;
+      access_level = row.cells[3].innerText;
+
+      /* add a new records in the array */
+      rows.push([id, username, fullname, access_level]);
+    }
+    csvContent = "data:text/csv;charset=utf-8,";
+    /* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
+    rows.forEach(function (rowArray) {
+      row = rowArray.join(",");
+      csvContent += row + "\r\n";
+    });
+
+    /* create a hidden <a> DOM node and set its download attribute */
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "suspended_accounts.csv");
+    document.body.appendChild(link);
+    /* download the data file named "members.csv" */
+    link.click();
+  }
+</script>
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"
+></script>
+<script type="text/javascript">
+  function Export() {
+    html2canvas(document.getElementById("tblmembers"), {
+      onrendered: function (canvas) {
+        var data = canvas.toDataURL();
+        var docDefinition = {
+          content: [
+            {
+              image: data,
+              width: 500,
+            },
+          ],
+        };
+        pdfMake.createPdf(docDefinition).download("clients.pdf");
+      },
+    });
+  }
+</script>
 <script>
   $(document).ready(function () {
     document.title = "Portal -  Paylink Clients";

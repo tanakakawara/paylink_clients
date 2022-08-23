@@ -28,7 +28,9 @@
           </svg>
         </span>
         <!--end::Svg Icon-->
-        <div class="text-white fw-bolder fs-2 mb-2 mt-5">2 Users</div>
+        <div class="text-white fw-bolder fs-2 mb-2 mt-5" id="count_new">
+          Users
+        </div>
         <div class="fw-bold text-white">New Accounts</div>
       </div>
       <!--end::Body-->
@@ -62,7 +64,7 @@
           </svg>
         </span>
         <!--end::Svg Icon-->
-        <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+        <div class="text-white fw-bolder fs-2 mb-2 mt-5" id="count_active">
           <span class="au_count"></span> Users
         </div>
         <div class="fw-bold text-white">Active Accounts</div>
@@ -98,7 +100,9 @@
           </svg>
         </span>
         <!--end::Svg Icon-->
-        <div class="text-white fw-bolder fs-2 mb-2 mt-5">12 Users</div>
+        <div class="text-white fw-bolder fs-2 mb-2 mt-5" id="count_suspended">
+          Users
+        </div>
         <div class="fw-bold text-white">Suspended Accounts</div>
       </div>
       <!--end::Body-->
@@ -106,6 +110,13 @@
     <!--end::Statistics Widget 5-->
   </div>
 </div>
+<script>
+    const count_users = <%- locals.count_users  %>
+
+  document.getElementById("count_new").innerHTML = count_users.new;
+  document.getElementById("count_active").innerHTML = count_users.active;
+  document.getElementById("count_suspended").innerHTML = count_users.suspended;
+</script>
 
 <%- include('../_page_headers/admin_bottom.ejs') %>
 <script>

@@ -31,7 +31,8 @@
 </div>
 <%- include('../_page_headers/admin_bottom.ejs') %>
 <script>
-  const notifications = { date: "23-04-22", message: "animals" };
+   const notifications = <%- locals.notifications  %>
+
   document.getElementById("date").innerHTML = notifications.date;
   document.getElementById("message").innerHTML = notifications.message;
 </script>

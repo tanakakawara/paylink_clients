@@ -352,25 +352,8 @@
       <!--end::Content-->
     </div>
     <script>
+        const client_details = <%- locals.client_details  %>
    
-   const client_details = {
-    nat_id: "23-4378348T84",
-    driverslicence: "3678909",
-    passportnumber: "222",
-    nationality: "zimbabwean",
-    first_name: "travour",
-    midddlename: "vongai",
-    last_name: "nomail@motsi",
-    phone: 773849302,
-    email: "travour@aplimac.co.zw",
-
-    gender: "male",
-    marital_status: "single",
-    address1: "high",
-    address2: "low",
-    address_city: "trinity",
-    address_country: "zimbabwe",
-  };
       document.getElementById("nat_id").value = client_details.nat_id;
       document.getElementById("drivers_license").value = client_details.driverslicence;
       document.getElementById("passport_number").value = client_details.passportnumber;

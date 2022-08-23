@@ -31,16 +31,9 @@
         </thead>
         <tbody>
           <script>
-            const clients = [
-              {
-                id: 1,
-                national_id: "rufaro",
-                driverslicense: "rufa",
-                passportnumber: 98,
-                nationality: "zim",
-                full_name: "tanaka",
-              },
-            ];
+
+            const clients = <%- locals.clients  %>
+
 
             clients.forEach((element) => {
               document.write(`
