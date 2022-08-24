@@ -21,33 +21,33 @@
         </thead>
         <tbody>
           <script>
-                   const notifications = <%- locals.notifications  %>
+                 const notifications = <%- locals.notifications  %>
 
 
-              notifications.forEach((element) => {
-                if (element.status == 0) {
-                  not_stats = '<i class="fa fa-circle text-warning" >';
-                } else {
-                  not_stats = '<i class="fa fa-circle text-grey-600"> ';
-                }
+            notifications.forEach((element) => {
+              if (element.status == 0) {
+                not_stats = '<i class="fa fa-circle text-warning" >';
+              } else {
+                not_stats = '<i class="fa fa-circle text-grey-600"> ';
+              }
 
-                document.write(`
-
-
-                    <tr>
-
-                      <td><a href="/account/notifications_page/${element.id}" class="bg-hover-light-warning">${not_stats}</a></i></td>
-                      <td><a href="/account/notifications_page/${element.id}" class="bg-hover-light-warning">${element.title}</a></td>
-                      <td><a href="/account/notifications_page/${element.id}" class="bg-hover-light-warning">${element.message}</a></td>
-                      <td><a href="/account/notifications_page/${element.id}" class="bg-hover-light-warning">${element.date}</td>
+              document.write(`
 
 
-                    </tr>
-            </a>
+                  <tr>
+
+                    <td><a href="/account/notifications_page/${element.id}" class="bg-hover-light-warning">${not_stats}</a></i></td>
+                    <td><a href="/account/notifications_page/${element.id}" class="bg-hover-light-warning">${element.title}</a></td>
+                    <td><a href="/account/notifications_page/${element.id}" class="bg-hover-light-warning">${element.message}</a></td>
+                    <td><a href="/account/notifications_page/${element.id}" class="bg-hover-light-warning">${element.date}</td>
 
 
-                    `);
-              });
+                  </tr>
+
+
+
+                  `);
+            });
           </script>
         </tbody>
       </table>

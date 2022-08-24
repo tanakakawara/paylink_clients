@@ -11,6 +11,25 @@ app.set("view engine", "ejs");
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
+app.use((req, res, =) => {
+  const header_names = {
+    fullname: "tanaka K",
+    username: "tanakaa",
+    new_not_count: 5,
+  };
+
+  const notifications_bar = [
+    { id: 1, message: "word", title: "notifications" },
+    { id: 1, message: "word", title: "notifications" },
+    { id: 1, message: "word", title: "notifications" },
+  ];
+
+  res.locals.notifications_bar = JSON.stringify(notifications_bar);
+  res.locals.header_names = JSON.stringify(header_names);
+
+  next();
+});
+
 //ROUTES################################################
 //auth
 app.get("/", (req, res) => {
